@@ -7,12 +7,18 @@ import (
 	"net/http"
 	"io"
 	"../config"
+	"encoding/json"
 )
+
+type jsonBody struct {
+	FileName string `json:"file_name"`
+}
 
 //
 // upload file
 //
 func Upload (w http.ResponseWriter,req *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	//get upload file
 	// Form attribut "uploadfile"
 	file, handler, err := req.FormFile("uploadfile")
@@ -40,5 +46,12 @@ func Upload (w http.ResponseWriter,req *http.Request) {
 		return
 	}
 
-	w.Write([]byte("success to web server"))
+	jb := new(jsonBody)
+	jb.FileName = fmt.Sprintf("upload %s success!",handler.Filename)
+
+	err = json.NewEncoder(w).Encode(jb)
+	if err != nil {
+		log.Println(err)
+		w.Write([]byte(err.Error()))
+	}
 }

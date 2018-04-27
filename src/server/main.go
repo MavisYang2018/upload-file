@@ -58,7 +58,16 @@ func isExist (w http.ResponseWriter,req *http.Request) {
 	}
 }
 
+//
+// login auth proccess
+//
+func authLogin (w http.ResponseWriter,req *http.Request) {
+	auth.Login(w,req)
+}
+
+
 func main() {
+	http.HandleFunc("/login",authLogin)
 	http.HandleFunc("/upload",upload)
 	http.HandleFunc("/isExist",isExist)
 	if err := http.ListenAndServe(config.Cfg.ListenPort,nil);err != nil {
