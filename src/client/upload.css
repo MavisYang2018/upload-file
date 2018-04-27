@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif, serif
+}
+
+.dropzone {
+    width: 300px;
+    height: 300px;
+    border: dashed 1px #ccc;
+    color: #ccc;
+    line-height: 300px;
+    text-align: center;
+}
+
+.dropzone.dragover {
+    border-color: black;
+    color: black;
+}

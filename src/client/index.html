@@ -1,11 +1,71 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>上传文件</title>
-</head>
-<body>
-<form enctype="multipart/form-data" action="http://127.0.0.1:8080/upload" method="post">
-  <input type="file" name="uploadfile" />
-  <input type="submit" value="upload" />
-</form>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="upload.css">
+    </head>
+    <body>
+        <div id="uploads"></div>
+        <div class="dropzone" id="dropzone">drop files here to upload.</div>
+        
+        <script>
+            (function () {
+                var dropzone=document.getElementById('dropzone');
+                
+                var displayUpload=function(data) {
+                    var uploads=document.getElementById('uploads'),
+                        anchor,
+                        x;
+                    //return "file_name" object from server
+                    console.log(data.file_name);
+                    anchor= document.createElement('p');
+                    anchor.innerText=data.file_name;
+                    uploads.appendChild(anchor);
+//                        uploads.appendChild(anchor);
+//                    for(x=0; x<data.length;x++) {
+//                        anchor= document.createElement('a');
+//                        anchor.herf=data[x].file;
+//                        anchor.innerText=data[x].name;
+                    
+//                        uploads.appendChild(anchor);
+//                    }
+                };
+                var upload=function(files) {
+                    var formData=new FormData(),
+                        xhr=new XMLHttpRequest(),
+                        x;
+                    for(x=0;x<files.length;x++) {
+                        //Note! set form name "uploadfile"
+                        formData.append('uploadfile',files[x]);
+                    }
+                    
+                    xhr.onload=function(){
+                        var data=JSON.parse(this.responseText);
+                        displayUpload(data);
+                    }
+                    
+                    xhr.open('post','http://192.168.0.103:8080/upload');
+                    xhr.send(formData);
+                };
+                
+                dropzone.ondrop=function(e) {
+                    e.preventDefault();
+                    this.className='dropzone';
+                    upload(e.dataTransfer.files);
+                };
+                
+                dropzone.ondragover=function() {
+                    this.className='dropzone dragover';
+                    return false;
+                };
+                
+                dropzone.ondragleave=function() {
+                    this.className='dropzone';
+                    return false;
+                };
+                
+            }());
+        
+        </script>
+    </body>
 </html>
