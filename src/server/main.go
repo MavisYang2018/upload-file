@@ -37,6 +37,10 @@ func upload (w http.ResponseWriter,req *http.Request) {
 //
 // check file exist
 //
+// client post json format example :
+//{
+//	"fn" : "server.key"
+//}
 func isExist (w http.ResponseWriter,req *http.Request) {
 	defer req.Body.Close()
 	dec := json.NewDecoder(req.Body)
