@@ -56,8 +56,6 @@ func isExist (w http.ResponseWriter,req *http.Request) {
 	} else {
 		w.Write([]byte("true"))
 	}
-
-
 }
 
 func main() {
