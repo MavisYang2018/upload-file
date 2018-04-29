@@ -2,9 +2,7 @@ body {
     font-family: sans-serif, serif
 }
 
-h4 {
-    
-}
+
 .dropzone {
     width: 300px;
     height: 300px;
@@ -22,7 +20,7 @@ h4 {
 
 h4 {
     color: #607D8B;
-    text-align: center;
+    
 }
 /*custom radio btn*/
 .radioContainer {
