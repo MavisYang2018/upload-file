@@ -2,6 +2,9 @@ body {
     font-family: sans-serif, serif
 }
 
+h4 {
+    
+}
 .dropzone {
     width: 300px;
     height: 300px;
@@ -9,9 +12,83 @@ body {
     color: #ccc;
     line-height: 300px;
     text-align: center;
+    
 }
 
 .dropzone.dragover {
     border-color: black;
     color: black;
 }
+
+h4 {
+    color: #607D8B;
+    text-align: center;
+}
+/*custom radio btn*/
+.radioContainer {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 16px;
+    user-select: none;
+    padding-left: 35px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+/*buttun text*/
+.radioContainer p {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: #607D8B;
+    
+}
+
+.radioContainer input {
+    display: none;
+}
+/*defalt style*/
+.radioContainer .circle {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    border: solid 1px #E0E0E0;
+    border-radius: 100%;
+    box-shadow:0px 0px 3px rgba(0,0,0,0.2) inset;
+}
+/*hover style*/
+.radioContainer:hover .circle {
+    background: #FAFAFA;
+}
+
+.radioContainer:hover p {
+    color: #FFCC80;
+}
+
+.radioContainer input:checked + .circle {
+    background-color: #fff;
+    border: solid 1px #607D8B;
+}
+
+
+
+/*check style*/
+.radioContainer input:checked + .circle:after {
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #607D8B;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+

@@ -92,3 +92,6 @@ h2 {
     color: #FFCCBC;
 }
 
+.login_box input:required {
+    border-bottom: solid 1px #E57373;
+}
