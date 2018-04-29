@@ -3,23 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="login.css">
-        <script type="text/javascript">
-//            check the all fields have filled done
-            function check_info() {
-                var username=document.getElementById('username').Value;
-                var password=document.getElementById('password').Value;
-                
-                if(username==''|| password=='') {
-                    alert('pleaes fill all fields');
-                    return false;
-                }else{
-                    return true;
-                }
-                
-            }
-            
         
-        </script>
     </head>
     
     <body>
@@ -29,9 +13,9 @@
 <!--            form of login-->
             <form action="login.php" method="post" onsubmit="return check_info();">
                 
-                <p>Username:</p><input id="username" type="text" name="user_name" placeholder="Enter username"/>
+                <p>Username:</p><input id="username" type="text" name="user_name" placeholder="Enter username" required/>
                 
-                <p>Password:</p><input id="password" type="password" name="password" placeholder="Enter password"/>
+                <p>Password:</p><input id="password" type="password" name="password" placeholder="Enter password" required/>
                 
                 <input id="sb_btn" type="submit" value="Log In >>" />
                 
@@ -41,6 +25,23 @@
             
         </div>
         
+        <script>
+//            check the all fields have filled done
+            function check_info() {
+                var username=document.getElementById('username').Value;
+                var password=document.getElementById('password').Value;
+                
+                if(username=='' || password=='') {
+                    alert('pleaes fill all fields');
+                    return false;
+                    
+                }else{
+                    return true;
+                }
+                
+            }
+            
         
+        </script>
     </body>
 </html>
