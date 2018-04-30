@@ -9,7 +9,6 @@ import (
 
 type config struct {
 	// upload to file servers
-	FileServerHosts []string `json:"file_server_hosts"`
 	WorkDir string `json:"work_dir"`
 	UploadFolder string `json:"upload_folder"`
 	ListenPort string `json:"listen_port"`
