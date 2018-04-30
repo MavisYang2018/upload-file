@@ -5,27 +5,30 @@
         <link rel="stylesheet" href="upload.css">
     </head>
     <body>
-<!--        files drop up root-->
-        <div id="root">
-            <h4>Where you want to drop ?</h4>
-            <label class="radioContainer"><p>PA</p>
-                <input type="radio" name="root" value="PA">
-                <span class="circle"></span>
-            </label>
-            <label class="radioContainer"><p>QA</p>
-                <input type="radio" name="root" value="QA">
-                <span class="circle"></span>
-            </label>
-            <label class="radioContainer"><p>Both</p>
-                <input type="radio" name="root" value="both">
-                <span class="circle"></span>
-            </label>
+
+        
+        <div id="uploads">
+        
+                <!--        files drop up root-->
+            <div id="root">
+                <h4>Where you want to drop ?</h4>
+                <label class="radioContainer"><p>PA</p>
+                    <input type="radio" name="root" value="PA">
+                    <span class="circle"></span>
+                </label>
+                <label class="radioContainer"><p>QA</p>
+                    <input type="radio" name="root" value="QA">
+                    <span class="circle"></span>
+                </label>
+                <label class="radioContainer"><p>Both</p>
+                    <input type="radio" name="root" value="both">
+                    <span class="circle"></span>
+                </label>
+            </div>
+            
+            <div class="dropzone" id="dropzone">drop files here to upload.</div> 
+            <input id="bt_submit" type="submit" value="Submit">
         </div>
-        
-        <div id="uploads"></div>
-        <div class="dropzone" id="dropzone">drop files here to upload.</div> 
-        <div id=bt_submit></div>
-        
         
         
         <script>

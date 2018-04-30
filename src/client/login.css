@@ -56,7 +56,7 @@ h2 {
     background: transparent;
     outline: none;
     height: 40px;
-    color: #E57373;
+    color: #81C784;
     font-size: 16px;
     letter-spacing: 1px;
 }
@@ -67,7 +67,7 @@ h2 {
     border-radius: 20px;
     
     height: 40px;
-    background: #B2DFDB;
+    background: #90A4AE;
     color: #fff;
     font-size: 18px;
     margin-top: 20px;
@@ -76,7 +76,7 @@ h2 {
 
 .login_box input[type="submit"]:hover {
     cursor: pointer;
-    background: #E57373;
+    background: #81C784;
 }
 
 .login_box a {
@@ -93,5 +93,5 @@ h2 {
 }
 
 .login_box input:required {
-    border-bottom: solid 1px #E57373;
+    border-bottom: solid 1px #eee;
 }
