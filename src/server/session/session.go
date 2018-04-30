@@ -8,7 +8,7 @@ var GlobalSessions *session.Manager
 
 func init() {
 	sessionConfig := &session.ManagerConfig{
-		CookieName:"iceseesion",
+		CookieName:"ice0603",
 		EnableSetCookie: true,
 		Gclifetime:3600,
 		Maxlifetime: 3600,

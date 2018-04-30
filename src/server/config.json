@@ -1,7 +1,20 @@
 {
+  "server_host" : "http://127.0.0.1:8080",
   "listen_port" : ":8080",
   "file_server_hosts" : ["pa","qa"],
-  "upload_folder" : "/Users/joe/Documents/Github/upload-file/src/server/upload"
+  "upload_folder" : "D:/USER/github/upload-file/upload",
+  "work_dir" : "D:/USER/github/upload-file/src/client",
+  "upload_max_size" : 31457280
 }
+
+
+//{
+//  "server_host" : "http://192.168.0.103:8080",
+//  "listen_port" : ":8080",
+//  "file_server_hosts" : ["pa","qa"],
+//  "upload_folder" : "/Users/joe/Documents/Github/upload-file/upload",
+//  "work_dir" : "/Users/joe/Documents/Github/upload-file/src/client",
+//  "upload_max_size" : 31457280
+//}
 
 //  "upload_folder" : "D:/USER/github/upload-file/src/server/upload"

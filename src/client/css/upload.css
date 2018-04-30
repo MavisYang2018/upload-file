@@ -10,7 +10,7 @@ body {
     transform: translate(-50%,-50%);
 }
 
-input[type="submit"] {
+button {
     display: block;
     cursor: pointer;
     border: none;
@@ -22,17 +22,17 @@ input[type="submit"] {
     bottom: -15%;
     left: 50%;
     transform: translate(-50%);
-    
-    
 }
-.dropzone {
-    width: 300px;
+.dropzone{
+    width: 600px;
     height: 300px;
     border: dashed 1px #ccc;
     color: #ccc;
     line-height: 300px;
     text-align: center;
-    
+}
+.filelist {
+    color: blue;
 }
 
 .dropzone.dragover {
@@ -42,7 +42,6 @@ input[type="submit"] {
 
 h4 {
     color: #607D8B;
-    
 }
 /*custom radio btn*/
 .radioContainer {
@@ -111,4 +110,3 @@ h4 {
     transform: translate(-50%,-50%);
     
 }
-

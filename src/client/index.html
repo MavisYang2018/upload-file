@@ -1,94 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="upload.css">
-    </head>
-    <body>
 
-        
-        <div id="uploads">
-        
-                <!--        files drop up root-->
-            <div id="root">
-                <h4>Where you want to drop ?</h4>
-                <label class="radioContainer"><p>PA</p>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://127.0.0.1:8080/static/css/login.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8080/static/css/upload.css">
+</head>
+
+<body>
+    <div id="uploads">
+
+        <!--        files drop up root-->
+        <div id="root">
+            <h4>Upload to</h4>
+            <label class="radioContainer"><p>PA</p>
                     <input type="radio" name="root" value="PA">
                     <span class="circle"></span>
                 </label>
-                <label class="radioContainer"><p>QA</p>
+            <label class="radioContainer"><p>QA</p>
                     <input type="radio" name="root" value="QA">
                     <span class="circle"></span>
                 </label>
-                <label class="radioContainer"><p>Both</p>
-                    <input type="radio" name="root" value="both">
+            <label class="radioContainer"><p>Both</p>
+                    <input type="radio" name="root" value="both" checked="checked">
                     <span class="circle"></span>
                 </label>
-            </div>
-            
-            <div class="dropzone" id="dropzone">drop files here to upload.</div> 
-            <input id="bt_submit" type="submit" value="Submit">
         </div>
-        
-        
-        <script>
-            (function () {
-                var dropzone=document.getElementById('dropzone');
-                
-                var displayUpload=function(data) {
-                    var uploads=document.getElementById('uploads'),
-                        anchor,
-                        x;
-                    //return "file_name" object from server
-                    console.log(data.file_name);
-                    anchor= document.createElement('p');
-                    anchor.innerText=data.file_name;
-                    uploads.appendChild(anchor);
-//                        uploads.appendChild(anchor);
-//                    for(x=0; x<data.length;x++) {
-//                        anchor= document.createElement('a');
-//                        anchor.herf=data[x].file;
-//                        anchor.innerText=data[x].name;
-                    
-//                        uploads.appendChild(anchor);
-//                    }
-                };
-                var upload=function(files) {
-                    var formData=new FormData(),
-                        xhr=new XMLHttpRequest(),
-                        x;
-                    for(x=0;x<files.length;x++) {
-                        //Note! set form name "uploadfile"
-                        formData.append('uploadfile',files[x]);
-                    }
-                    
-                    xhr.onload=function(){
-                        var data=JSON.parse(this.responseText);
-                        displayUpload(data);
-                    }
-                    
-                    xhr.open('post','http://192.168.0.103:8080/upload');
-                    xhr.send(formData);
-                };
-                
-                dropzone.ondrop=function(e) {
-                    e.preventDefault();
-                    this.className='dropzone';
-                    upload(e.dataTransfer.files);
-                };
-                
-                dropzone.ondragover=function() {
-                    this.className='dropzone dragover';
-                    return false;
-                };
-                
-                dropzone.ondragleave=function() {
-                    this.className='dropzone';
-                    return false;
-                };
-                
-            }());
-        
-        </script>
-    </body>
+        <div class="dropzone" id="dropzone">drop files here to upload.</div>
+        <button id="bt_submit" type="button" onclick="handleFile()">Submit</button>
+    </div>
+    <!--    handle dropzonw event and upload file to server-->
+    <script src="http://127.0.0.1:8080/static/js/handle.js"></script>
+</body>
+
 </html>
