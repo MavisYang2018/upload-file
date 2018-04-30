@@ -1,0 +1,7 @@
+{
+  "listen_port" : ":8080",
+  "file_server_hosts" : ["pa","qa"],
+  "upload_folder" : "/Users/joe/Documents/Github/upload-file/src/server/upload"
+}
+
+//  "upload_folder" : "D:/USER/github/upload-file/src/server/upload"
